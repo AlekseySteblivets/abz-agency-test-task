@@ -1,0 +1,32 @@
+.title {
+  margin: 0;
+  padding-top: 138px;
+  font-size: 40px;
+  line-height: 1;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+  padding-bottom: 50px;
+}
+
+.item {
+  outline: 1px solid tomato;
+  padding: 20px;
+  margin: 0px;
+  list-style: none;
+}
+
+.menu {
+  padding: 0px;
+  margin: 0px;
+}
+
+.name {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.position {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+/*# sourceMappingURL=UserCards.module.css.map */
