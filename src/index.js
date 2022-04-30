@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.scss";
+
 import App from "./App";
+
 import "modern-normalize/modern-normalize.css";
+import "./assets/styles/index.scss";
 
 // import "css/nunito/nunito-fontface.css";
 

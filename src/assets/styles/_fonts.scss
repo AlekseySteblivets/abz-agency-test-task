@@ -1,0 +1,13 @@
+@import "_sizes";
+
+@mixin font-heading {
+  font-size: $size8;
+  font-weight: 400;
+  line-height: $size8;
+}
+
+@mixin font-boding {
+  font-weight: 400;
+  font-size: $size4;
+  line-height: 26;
+}
