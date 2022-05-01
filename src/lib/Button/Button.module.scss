@@ -1,0 +1,23 @@
+@import "../../assets/styles/sizes";
+@import "../../assets/styles/colors";
+
+.button {
+  display: block;
+  width: 100px;
+  height: 34px;
+  background-color: $color-primary;
+  border-radius: 80px;
+  text-align: center;
+  padding-top: $size1;
+  padding-bottom: $size1;
+  border: none;
+
+  &:hover {
+    background-color: $color-primary-bright;
+  }
+}
+
+.buttonDisabled {
+  background-color: $color-grey;
+  pointer-events: none;
+}

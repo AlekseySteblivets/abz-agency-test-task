@@ -1,3 +1,5 @@
+import Button from "../../lib/Button/Button";
+
 import styles from "./Hero.module.scss";
 
 export default function Hero() {
@@ -13,9 +15,7 @@ export default function Hero() {
         mind. They should also be excited to learn, as the world of Front-End
         Development keeps evolving.
       </p>
-      <button type="button" className={styles.button}>
-        Sing up
-      </button>
+      <Button>Sing up</Button>
     </>
   );
 }

@@ -1,9 +1,13 @@
-import PreviewPage from "./components/PreviewPage";
+import PreviewPage from "./pages/PreviewPage";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./assets/styles/theme";
 
 function App() {
   return (
     <div className="App">
-      <PreviewPage />
+      <ThemeProvider theme={theme}>
+        <PreviewPage />
+      </ThemeProvider>
     </div>
   );
 }

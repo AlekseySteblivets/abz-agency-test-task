@@ -1,4 +1,5 @@
 import styles from "./Navigation.module.scss";
+import Button from "../../lib/Button/Button";
 
 export default function Navigation() {
   return (
@@ -6,30 +7,13 @@ export default function Navigation() {
       <a href="./#" className={styles.link}>
         <img
           alt="logo"
-          src="../../../img/svg/logo.svg"
+          src="../../assets/img/logo.svg"
           width="104"
           className={styles.headerlogo}
         />
       </a>
-      <button type="button" className={styles.button}>
-        Users
-      </button>
-      <button type="button" className={styles.button}>
-        Sing up
-      </button>
+      <Button>User</Button>
+      <Button>Sing up</Button>
     </nav>
   );
 }
-
-// className={styles.link styles.logo}
-//   <a href="" className={styles.link styles.logo}>
-//     <img
-//       src="../img/svg/logo.svg"
-//       alt="логотип"
-//       width="136"
-//       className={styles.header-logo}
-//     />
-//   </a>
-//   <button className={styles.nav-btn} type="button">
-//     Заказать
-//   </button>
