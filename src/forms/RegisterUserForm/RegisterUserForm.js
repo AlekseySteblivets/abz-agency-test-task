@@ -1,90 +1,93 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import TextField from "@mui/material/TextField";
+
 import Button from "../../lib/Button/Button";
-// import axios from "axios";
-
 import RadioButtons from "../RadioButtons/RadioButtons";
-// import { useState, useEffect } from "react";
+import ButtonUpload from "../../lib/ButtonUpload";
 
-class Form extends Component {
-  // const [backgroundButtonColor, setBackgroundButtonColor] = useState("grey");
-  state = {
-    name: "",
-    number: "",
-    email: "",
+import styles from "./RedisterUserForm.module.scss";
+
+const schema = yup
+  .object()
+  .shape({
+    name: yup.string().required(),
+    email: yup.string().email().required(),
+    phone: yup
+      .string()
+      .matches(
+        /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
+        "Invalid phone number"
+      )
+      .required(),
+    position: yup.string().required(),
+    // photo: yup.object().required(),
+  })
+  .required();
+
+export default function Form() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+    reset,
+  } = useForm({
+    mode: "onBlur",
+    reValidateMode: "onChange",
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
   };
+  return (
+    <>
+      <h2 className={styles.title}>Working with POST request</h2>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.formUserForm}>
+        {/* <div></div> */}
+        <TextField
+          error={!!errors.name}
+          inputProps={{ ...register("name") }}
+          className={styles.inputForm}
+          type="text"
+          label="Your name"
+          variant="outlined"
+          helperText={errors.name?.message}
+        />
 
-  componentDidMount() {
-    // this.props.fetchContact();
-  }
+        <TextField
+          error={!!errors.email}
+          inputProps={{ ...register("email") }}
+          className={styles.inputForm}
+          type="text"
+          label="Email"
+          variant="outlined"
+          helperText={errors.email?.message}
+        />
 
-  handleInputChange = (evt) => {
-    console.log(evt.currentTarget.value);
-    const { name, value } = evt.currentTarget;
-    this.setState({ [name]: value });
-  };
+        <TextField
+          error={!!errors.phone}
+          inputProps={{ ...register("phone") }}
+          className={styles.inputForm}
+          type="text"
+          label="phone"
+          variant="outlined"
+          helperText={errors.phone?.message ?? "+38 (XXX) XXX - XX - XX"}
+        />
 
-  // handleSubmit = (evt) => {
-  //   evt.preventDefault();
-  //   // if(this.state.name)
-  //   this.props.addContact(this.state.name, this.state.number);
-  //   this.setState({ name: "", number: "" });
-  // };
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   this.props.onLogin(this.state);
-  //   this.setState({ name: "", email: "", password: "" });
-  // };
-
-  render() {
-    return (
-      <>
-        <h2>Working with POST request</h2>
-        <form onSubmit={this.handleSubmit}>
-          <legend></legend>
-          <label>
-            <input
-              type="text"
-              name="name"
-              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-              title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-              placeholder="Your name"
-              required
-              value={this.state.name}
-              onChange={this.handleInputChange}
-              // id={this.inputId}
-            ></input>
-          </label>
-          <label>
-            <input
-              type="email"
-              name="email"
-              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-              title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
-              value={this.state.email}
-              onChange={this.handleInputChange}
-              required
-              placeholder="Email"
-            ></input>
-          </label>
-          <label>
-            <input
-              type="tel"
-              name="number"
-              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-              title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
-              value={this.state.number}
-              onChange={this.handleInputChange}
-              placeholder="Phone"
-              required
-            ></input>
-          </label>
-          <RadioButtons />
-          <Button disabled={true}>Sing up</Button>
-        </form>
-      </>
-    );
-  }
+        <RadioButtons register={register} />
+        <ButtonUpload register={register} />
+        <Button
+          type="submit"
+          disabled={!isValid}
+          className={styles.btnUserForm}
+        >
+          Sing up
+        </Button>
+      </form>
+    </>
+  );
 }
-
-export default Form;

@@ -4,19 +4,20 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 
-export default function RadioButton() {
+export default function RadioButton({ register }) {
   return (
     <FormControl>
       <legend>Select your position</legend>
       <RadioGroup
-        aria-labelledby="demo-radio-buttons-group-label"
+        aria-labelledby="radio-position"
         defaultValue="female"
-        name="radio-buttons-group"
+        name="position"
       >
         <FormControlLabel
           value="Frontend developer"
           control={
             <Radio
+              {...register("position")}
               color={"secondary"}
               sx={{
                 "& .MuiSvgIcon-root": {
@@ -32,6 +33,7 @@ export default function RadioButton() {
           value="Backend developer"
           control={
             <Radio
+              {...register("position")}
               color={"secondary"}
               sx={{
                 "& .MuiSvgIcon-root": {
@@ -46,6 +48,7 @@ export default function RadioButton() {
           value="Designer"
           control={
             <Radio
+              {...register("position")}
               color={"secondary"}
               sx={{
                 "& .MuiSvgIcon-root": {
@@ -60,6 +63,7 @@ export default function RadioButton() {
           value="QA"
           control={
             <Radio
+              {...register("position")}
               color={"secondary"}
               sx={{
                 "& .MuiSvgIcon-root": {

@@ -1,0 +1,31 @@
+@import "../../assets/styles/colors";
+
+.uploadBlock {
+  display: flex;
+  align-items: center;
+  margin-top: 47px;
+  margin-bottom: 50px;
+  border: 1px solid $color-light-grey;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.inputUpload {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.buttonUpload {
+  text-align: center;
+  border: 1px solid $color-black;
+  width: 83px;
+  height: 54px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  color: $color-grey-plaseholder;
+  padding-top: 14px;
+}
+// .text {
+//   color: $color-grey-plaseholder;
+//   padding-left: 16px;
+// }

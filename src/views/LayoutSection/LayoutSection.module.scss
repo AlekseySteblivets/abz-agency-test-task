@@ -1,5 +1,6 @@
 @import "../../assets/styles/media";
 @import "../../assets/styles/sizes";
+@import "../../assets//styles/colors";
 
 .section {
   margin: 0 auto;
@@ -8,6 +9,7 @@
   width: 100%;
   width: 360px;
   outline: 1px solid tomato;
+  background-color: $color-bg;
   @include media-s {
     width: 768px;
     padding-left: $size7;
@@ -23,4 +25,8 @@
     padding-left: 695px;
     padding-right: 695px;
   }
+}
+
+.bgHero {
+  background-image: url("../../assets/img/bg-hero-mobile.jpg");
 }

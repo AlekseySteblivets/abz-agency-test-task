@@ -4,7 +4,10 @@ $color-grey: #b4b4b4;
 $color-bg: #f8f8f8;
 $color-secondary: #00bdd3;
 $color-black: rgba(0, 0, 0, 0.87);
-$color-radio-button: #d0cfcf;
+$color-light-grey: #d0cfcf;
+$color-error: #cb3d40;
+$color-grey-plaseholder: #7e7e7e;
+$color-white: #ffffff;
 
 :export {
   colorPrimary: $color-primary;
@@ -13,5 +16,8 @@ $color-radio-button: #d0cfcf;
   colorBg: $color-bg;
   colorSecondary: $color-secondary;
   colorBlack: $color-black;
-  colorRadioButton: $color-radio-button;
+  colorLightGrey: $color-light-grey;
+  colorError: $color-error;
+  colorGreyPlaseholder: $color-grey-plaseholder;
+  colorWhite: $color-white;
 }

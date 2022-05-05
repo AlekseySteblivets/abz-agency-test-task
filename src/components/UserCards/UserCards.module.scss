@@ -1,7 +1,10 @@
+@import "../../assets/styles/colors";
+@import "../../assets/styles/sizes";
+
 .title {
   margin: 0;
   padding-top: 138px;
-  font-size: 40px;
+  font-size: $size8;
   line-height: 1;
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
@@ -9,23 +12,32 @@
 }
 
 .item {
+  background-color: $color-white;
+  text-align: center;
   outline: 1px solid tomato;
-  padding: 20px;
+  padding: $size5;
   margin: 0px;
   list-style: none;
+
+  &:not(:last-child) {
+    margin-bottom: $size5;
+  }
 }
 
 .menu {
+  // display: flex;
+  // align-items: center;
   padding: 0px;
-  margin: 0px;
+  margin-top: 0px;
+  margin-bottom: 50px;
 }
 
 .name {
-  margin-top: 20px;
+  margin-top: $size5;
   margin-bottom: 0px;
 }
 .position {
-  margin-top: 20px;
+  margin-top: $size5;
   margin-bottom: 0px;
 }
 

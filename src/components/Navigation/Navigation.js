@@ -1,5 +1,6 @@
 import styles from "./Navigation.module.scss";
 import Button from "../../lib/Button/Button";
+import logo from "../../assets/img/logo-png.png";
 
 export default function Navigation() {
   return (
@@ -7,13 +8,14 @@ export default function Navigation() {
       <a href="./#" className={styles.link}>
         <img
           alt="logo"
-          src="../../assets/img/logo.svg"
+          src={logo}
           width="104"
+          height="26"
           className={styles.headerlogo}
         />
       </a>
-      <Button>User</Button>
-      <Button>Sing up</Button>
+      <Button className={styles.butNav}>User</Button>
+      <Button className={styles.butNav}>Sing up</Button>
     </nav>
   );
 }

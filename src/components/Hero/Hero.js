@@ -4,7 +4,7 @@ import styles from "./Hero.module.scss";
 
 export default function Hero() {
   return (
-    <>
+    <div className={styles.hero}>
       <h1 className={styles.titleHero}>
         Test assignment for front-end developer
       </h1>
@@ -15,7 +15,7 @@ export default function Hero() {
         mind. They should also be excited to learn, as the world of Front-End
         Development keeps evolving.
       </p>
-      <Button>Sing up</Button>
-    </>
+      <Button className={styles.button}>Sing up</Button>
+    </div>
   );
 }

@@ -1,38 +1,46 @@
-.titleHero {
-  padding-top: 40px;
-  padding-bottom: 21px;
-  margin: 0;
-  font-size: 40px;
-  line-height: 1;
+@import "../../assets/styles/sizes";
+@import "../../assets/styles/fonts";
+@import "../../assets/styles/colors";
 
+.titleHero {
+  padding-bottom: 21px;
+  padding-top: $size8;
+  margin: 0;
+  font-size: $size8;
   text-align: center;
+  color: $color-white;
+  @include font-heading;
 }
 
 .textHero {
   margin: 0;
-  padding-bottom: 32px;
+  padding-bottom: $size7;
   text-align: center;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.63;
-
+  color: $color-white;
   text-align: center;
-
-  //   color: #ffffff;
+  @include font-bodying;
 }
 
-.button {
-  width: 100px;
-  height: 34px;
-  background-color: #f4e041;
-  border-radius: 80px;
-  /* align-items: center; */
-  text-align: center;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  border: none;
-  margin-bottom: 71px;
+.hero {
+  background-image: url("../../assets/img/bg-hero-mobile.jpg");
+  padding-bottom: 70px;
 }
-.button:hover {
-  background-color: #ffe302;
-}
+
+// .button {
+//   padding-bottom: 50px;
+// }
+
+// .button {
+//   width: 100px;
+//   height: 34px;
+//   background-color: $color-primary;
+//   border-radius: $size12;
+//   text-align: center;
+//   padding-top: $size1;
+//   padding-bottom: $size1;
+//   border: none;
+//   margin-bottom: 71px;
+// }
+// .button:hover {
+//   background-color: $color-primary-bright;
+// }
