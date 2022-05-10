@@ -5,10 +5,7 @@ import Hero from "../../components/Hero";
 import UserCards from "../../components/UserCards";
 import RegisterUserForm from "../../forms/RegisterUserForm";
 
-// import styles from "./PreviewPage.module.scss";
-
 const pageViews = [Hero, UserCards, RegisterUserForm];
-console.log(pageViews);
 
 export default function PreviewPage() {
   return (

@@ -22,25 +22,13 @@
 }
 
 .hero {
-  background-image: url("../../assets/img/bg-hero-mobile.jpg");
   padding-bottom: 70px;
 }
-
-// .button {
-//   padding-bottom: 50px;
-// }
-
-// .button {
-//   width: 100px;
-//   height: 34px;
-//   background-color: $color-primary;
-//   border-radius: $size12;
-//   text-align: center;
-//   padding-top: $size1;
-//   padding-bottom: $size1;
-//   border: none;
-//   margin-bottom: 71px;
-// }
-// .button:hover {
-//   background-color: $color-primary-bright;
+// .bgHero {
+//   position: absolute;
+//   z-index: 1;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-image: url("../../assets/img/bg-hero-mobile.jpg");
 // }

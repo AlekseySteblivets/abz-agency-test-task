@@ -1,31 +1,15 @@
 // import React, { Component } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+
 import TextField from "@mui/material/TextField";
 
 import Button from "../../lib/Button/Button";
 import RadioButtons from "../RadioButtons/RadioButtons";
 import ButtonUpload from "../../lib/ButtonUpload";
+import { schema } from "../../schemas/registerForm.schema";
 
 import styles from "./RedisterUserForm.module.scss";
-
-const schema = yup
-  .object()
-  .shape({
-    name: yup.string().required(),
-    email: yup.string().email().required(),
-    phone: yup
-      .string()
-      .matches(
-        /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
-        "Invalid phone number"
-      )
-      .required(),
-    position: yup.string().required(),
-    // photo: yup.object().required(),
-  })
-  .required();
 
 export default function Form() {
   const {
@@ -34,10 +18,12 @@ export default function Form() {
     formState: { errors, isValid },
     reset,
   } = useForm({
-    mode: "onBlur",
+    mode: "onChange",
     reValidateMode: "onChange",
     resolver: yupResolver(schema),
   });
+
+  console.log({ formState: { errors } });
 
   const onSubmit = (data) => {
     console.log(data);
@@ -78,8 +64,8 @@ export default function Form() {
           helperText={errors.phone?.message ?? "+38 (XXX) XXX - XX - XX"}
         />
 
-        <RadioButtons register={register} />
-        <ButtonUpload register={register} />
+        <RadioButtons {...register("position_id")} />
+        <ButtonUpload {...register("photo")} error={errors.photo?.message} />
         <Button
           type="submit"
           disabled={!isValid}

@@ -2,6 +2,7 @@ import styles from "./Button.module.scss";
 import cn from "classnames";
 
 export default function Button({
+  onClick,
   children,
   disabled,
   type = "button",
@@ -9,6 +10,7 @@ export default function Button({
 }) {
   return (
     <button
+      onClick={() => onClick()}
       type={type}
       className={cn(
         styles.button,

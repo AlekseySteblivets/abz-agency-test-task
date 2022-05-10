@@ -3,6 +3,7 @@
 @import "../../assets//styles/colors";
 
 .section {
+  position: relative;
   margin: 0 auto;
   padding-left: $size4;
   padding-right: $size4;
@@ -25,8 +26,4 @@
     padding-left: 695px;
     padding-right: 695px;
   }
-}
-
-.bgHero {
-  background-image: url("../../assets/img/bg-hero-mobile.jpg");
 }

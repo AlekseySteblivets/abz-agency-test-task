@@ -4,18 +4,21 @@ import logo from "../../assets/img/logo-png.png";
 
 export default function Navigation() {
   return (
-    <nav className={styles.navigation}>
-      <a href="./#" className={styles.link}>
-        <img
-          alt="logo"
-          src={logo}
-          width="104"
-          height="26"
-          className={styles.headerlogo}
-        />
-      </a>
-      <Button className={styles.butNav}>User</Button>
-      <Button className={styles.butNav}>Sing up</Button>
-    </nav>
+    <>
+      <div className={styles.bgColor} />
+      <nav className={styles.navigation}>
+        <a href="./#" className={styles.link}>
+          <img
+            alt="logo"
+            src={logo}
+            width="104"
+            height="26"
+            className={styles.headerlogo}
+          />
+        </a>
+        <Button className={styles.butNav}>User</Button>
+        <Button className={styles.butNav}>Sing up</Button>
+      </nav>
+    </>
   );
 }
