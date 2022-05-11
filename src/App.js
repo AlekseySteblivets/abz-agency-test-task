@@ -1,12 +1,11 @@
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 import PreviewPage from "./pages/PreviewPage";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./assets/styles/theme";
+import { queryClient } from "./api/queryClient";
 
-const queryClient = new QueryClient();
-
-console.log(queryClient);
 function App() {
   return (
     <div className="App">
@@ -14,6 +13,7 @@ function App() {
         <ThemeProvider theme={theme}>
           <PreviewPage />
         </ThemeProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </div>
   );

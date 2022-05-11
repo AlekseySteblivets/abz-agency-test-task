@@ -17,7 +17,9 @@ export default function Navigation() {
           />
         </a>
         <Button className={styles.butNav}>User</Button>
-        <Button className={styles.butNav}>Sing up</Button>
+        <Button className={styles.butNav} type="submit">
+          Sing up
+        </Button>
       </nav>
     </>
   );

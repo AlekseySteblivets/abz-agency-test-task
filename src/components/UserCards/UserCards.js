@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 import Tooltip from "@mui/material/Tooltip";
 import Fade from "@mui/material/Fade";
@@ -17,7 +17,7 @@ export default function UserCards() {
     page: pageNumber,
     count: countUsers,
   });
-  console.log(data);
+  // console.log(data);
 
   if (isLoading) return "Loading...";
 
@@ -47,7 +47,7 @@ export default function UserCards() {
           </li>
         ))}
       </ul>
-      {data.total_pages !== data.page && (
+      {data.total_pages > data.page && (
         <Button type="submit" onClick={() => setPageNumber(pageNumber + 1)}>
           Show more
         </Button>

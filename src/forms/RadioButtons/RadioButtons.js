@@ -3,6 +3,8 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
+import { usePosition } from "../../api/queries/usePositions";
+import { positions } from "@mui/system";
 
 const radioButtons = [
   "Frontend developer",
@@ -15,6 +17,9 @@ export default forwardRef(function RadioButton(
   { name, onChange, onBlur },
   ref
 ) {
+  const { isLoading, error, data } = usePosition();
+
+  console.log(data);
   // console.log(ref);
   return (
     <FormControl>
@@ -24,10 +29,10 @@ export default forwardRef(function RadioButton(
         defaultValue="female"
         name="position_id"
       >
-        {radioButtons.map((button) => (
+        {data?.map(({ id, name: labelName }) => (
           <FormControlLabel
-            key={button}
-            value={button}
+            key={id}
+            value={id}
             control={
               <Radio
                 ref={ref}
@@ -42,7 +47,7 @@ export default forwardRef(function RadioButton(
                 }}
               />
             }
-            label={button}
+            label={labelName}
           />
         ))}
       </RadioGroup>

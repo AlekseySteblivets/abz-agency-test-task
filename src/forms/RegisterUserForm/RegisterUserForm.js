@@ -23,12 +23,11 @@ export default function Form() {
     resolver: yupResolver(schema),
   });
 
-  console.log({ formState: { errors } });
-
   const onSubmit = (data) => {
     console.log(data);
     reset();
   };
+
   return (
     <>
       <h2 className={styles.title}>Working with POST request</h2>

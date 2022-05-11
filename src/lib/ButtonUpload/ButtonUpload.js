@@ -16,7 +16,6 @@ export default forwardRef(function ButtonUpload(
     setFileName(nameImg);
   };
 
-  console.log(error);
   return (
     <>
       <div className={styles.uploadBlock}>
