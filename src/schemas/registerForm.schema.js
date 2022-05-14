@@ -17,16 +17,15 @@ export const schema = yup
         "Invalid phone number"
       )
       .required(),
-    // position_id: yup.number().required(),
+    position_id: yup.number().required(),
     // photo: yup.string().required(),
     photo: yup
       .mixed()
       .test("fileSize", "The file is too large", (value) => {
         if (!value.length) return false;
-        console.log(value);
         return value[0].size <= 5242880; // 5Mb
       })
-      .test("format", "Text jnijndcjdnckdj", (value) => {
+      .test("format", "Format is not image/jpg or image/jpeg ", (value) => {
         if (!value.length) return false;
         return supportedFormats.includes(value[0].type);
       }),

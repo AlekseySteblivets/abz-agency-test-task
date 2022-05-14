@@ -11,7 +11,7 @@ import styles from "./UserCards.module.scss";
 
 export default function UserCards() {
   const [pageNumber, setPageNumber] = useState(1);
-  const [countUsers, setCountUsers] = useState(6);
+  const countUsers = 6;
 
   const { isLoading, error, data } = useUsers({
     page: pageNumber,

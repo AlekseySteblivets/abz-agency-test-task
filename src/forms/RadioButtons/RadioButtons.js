@@ -4,23 +4,14 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import { usePosition } from "../../api/queries/usePositions";
-import { positions } from "@mui/system";
-
-const radioButtons = [
-  "Frontend developer",
-  "Backend developer",
-  "Designer",
-  "QA",
-];
 
 export default forwardRef(function RadioButton(
   { name, onChange, onBlur },
   ref
 ) {
   const { isLoading, error, data } = usePosition();
+  // console.log(data);
 
-  console.log(data);
-  // console.log(ref);
   return (
     <FormControl>
       <legend>Select your position</legend>

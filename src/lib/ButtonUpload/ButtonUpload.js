@@ -8,7 +8,6 @@ export default forwardRef(function ButtonUpload(
   ref
 ) {
   const [fileName, setFileName] = useState(null);
-
   const fileInputChange = (e) => {
     // e.preventDefault();
     onChange(e);
@@ -36,7 +35,7 @@ export default forwardRef(function ButtonUpload(
           {/* {fileName ? fileName : "Upload your photo"} */}
         </span>
       </div>
-      {/* {errors && <span>A foto dosn't choose </span>} */}
+      {error && <span>{error}</span>}
     </>
   );
 });

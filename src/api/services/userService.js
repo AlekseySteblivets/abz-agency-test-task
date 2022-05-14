@@ -9,8 +9,8 @@ export const userService = {
 
     const { data } = await instance.get(`/users?${query}`);
     const currentCache = getUsersCache(page - 1, count);
-    console.log(data);
-    console.log(currentCache);
+    // console.log(currentCache);
+    // console.log(data);
 
     return currentCache
       ? { ...data, users: [...currentCache.users, ...data.users] }
