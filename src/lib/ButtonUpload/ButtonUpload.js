@@ -9,12 +9,12 @@ export default forwardRef(function ButtonUpload(
 ) {
   const [fileName, setFileName] = useState(null);
   const fileInputChange = (e) => {
-    // e.preventDefault();
     onChange(e);
     let nameImg = e.target.files[0].name;
     setFileName(nameImg);
   };
 
+  console.log(error);
   return (
     <>
       <div className={styles.uploadBlock}>
@@ -35,7 +35,7 @@ export default forwardRef(function ButtonUpload(
           {/* {fileName ? fileName : "Upload your photo"} */}
         </span>
       </div>
-      {error && <span>{error}</span>}
+      {error && <span className={styles.errorUploadInput}>{error}</span>}
     </>
   );
 });

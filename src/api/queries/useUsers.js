@@ -1,20 +1,37 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useQuery } from "react-query";
 import { userService } from "../services/userService";
 
 import { USER_CACHE_KEY } from "../cache/usersCache";
 
-export const useUsers = ({ page, count }) => {
+const countUsers = 6;
+
+export const useUsers = () => {
+  const [pageNumber, setPageNumber] = useState(1);
+
   const { getUsers } = userService;
 
   const queryKey = useMemo(
-    () => [USER_CACHE_KEY, { page, count }],
-    [page, count]
+    () => [USER_CACHE_KEY, { page: pageNumber, count: countUsers }],
+    [pageNumber]
   );
-  const { isLoading, error, data } = useQuery(
+
+  const { isLoading, error, data, isFetching } = useQuery(
     queryKey,
-    () => getUsers({ page, count }),
-    { keepPreviousData: true }
+    () => getUsers({ page: pageNumber, count: countUsers }),
+    {
+      keepPreviousData: false,
+      // onSuccess: (data) => {
+      //   console.log(data);
+      // },
+    }
   );
-  return { isLoading, error, data };
+
+  return {
+    isLoading,
+    error,
+    data,
+    isFetching,
+    nextPage: () => setPageNumber((prevPage) => prevPage + 1),
+  };
 };

@@ -3,13 +3,18 @@ import cn from "classnames";
 
 export default function Button({
   onClick = () => {},
+  href,
   children,
   disabled,
   type = "button",
   className,
 }) {
+  const Tag = ({ ...props }) =>
+    href ? <a {...props} /> : <button {...props} />;
+
   return (
-    <button
+    <Tag
+      href={href}
       onClick={onClick}
       type={type}
       className={cn(
@@ -22,6 +27,6 @@ export default function Button({
       disabled={disabled}
     >
       {children}
-    </button>
+    </Tag>
   );
 }

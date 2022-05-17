@@ -1,0 +1,13 @@
+.imgPreloader {
+  display: block;
+  margin: 0 auto;
+  animation: spin 0.75s linear 0s infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

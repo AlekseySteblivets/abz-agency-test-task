@@ -4,15 +4,14 @@
 .button {
   display: block;
   margin: 0 auto;
-  // margin-left: auto;
-  // margin-right: auto;
   width: 100px;
-  height: 34px;
+  // height: 34px;
   background-color: $color-primary;
   border-radius: 80px;
   text-align: center;
-  padding-top: $size1;
-  padding-bottom: $size1;
+  padding-top: $size2;
+  padding-bottom: $size2;
+
   border: none;
 
   &:hover {

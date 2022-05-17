@@ -17,7 +17,9 @@ export default function Hero() {
           mind. They should also be excited to learn, as the world of Front-End
           Development keeps evolving.
         </p>
-        <Button className={styles.button}>Sing up</Button>
+        <Button className={styles.button} href="#registerUserForm">
+          Sing up
+        </Button>
       </div>
     </>
   );

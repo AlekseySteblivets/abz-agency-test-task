@@ -1,5 +1,6 @@
 import instance from "./requestService";
 import { tokenService } from "./tokenService";
+import { refetchUsersCach } from "../cache/usersCache";
 
 export const registerUserService = {
   async postUser(formData) {
@@ -10,6 +11,10 @@ export const registerUserService = {
       headers: { Token: token },
     });
     console.log(data);
+    if (data.success === true) {
+      refetchUsersCach();
+    }
+
     return data;
   },
 };

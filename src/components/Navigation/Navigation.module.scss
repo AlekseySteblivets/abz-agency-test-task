@@ -10,9 +10,9 @@
   padding-bottom: 13px;
 }
 
-.butNav {
-  margin: 0px;
-}
+// .butNav {
+//   margin: 0px;
+// }
 
 .bgColor {
   position: absolute;
@@ -25,3 +25,8 @@
 // .link {
 //   display: block;
 // }
+
+a {
+  text-decoration: none;
+  color: $color-black;
+}

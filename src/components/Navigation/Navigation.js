@@ -1,12 +1,8 @@
 import styles from "./Navigation.module.scss";
 import Button from "../../lib/Button/Button";
 import logo from "../../assets/img/logo-png.png";
-// import { useToken } from "../../api/queries/useToken";
-import { tokenService } from "../../api/services/tokenService";
 
 export default function Navigation() {
-  // const { data } = useToken();
-
   return (
     <>
       <div className={styles.bgColor} />
@@ -20,12 +16,12 @@ export default function Navigation() {
             className={styles.headerlogo}
           />
         </a>
-        <Button className={styles.butNav}>User</Button>
+        <Button href="#userCards" className={styles.butNav}>
+          User
+        </Button>
         <Button
-          href="#" // написать якорь
+          href="#registerUserForm" // написать якорь
           className={styles.butNav}
-          type="submit"
-          // onClick={() => tokenService.getToken()}
         >
           Sing up
         </Button>

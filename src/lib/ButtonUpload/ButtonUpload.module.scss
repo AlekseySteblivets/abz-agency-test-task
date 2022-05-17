@@ -1,6 +1,7 @@
 @import "../../assets/styles/colors";
 
 .uploadBlock {
+  position: relative;
   display: flex;
   align-items: center;
   margin-top: 47px;
@@ -29,4 +30,12 @@
 .text {
   color: $color-grey-plaseholder;
   padding-left: 16px;
+}
+
+.errorUploadInput {
+  position: absolute;
+  color: $color-error;
+
+  bottom: 547px;
+  left: 76px;
 }

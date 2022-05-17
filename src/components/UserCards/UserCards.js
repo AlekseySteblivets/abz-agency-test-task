@@ -6,20 +6,14 @@ import { useUsers } from "../../api/queries/useUsers";
 
 import Avatar from "../../lib/Avatar/Avatar";
 import Button from "../../lib/Button";
+import Preloader from "../../lib/Preloader";
 
 import styles from "./UserCards.module.scss";
 
 export default function UserCards() {
-  const [pageNumber, setPageNumber] = useState(1);
-  const countUsers = 6;
+  const { isLoading, error, data, isFetching, nextPage } = useUsers();
 
-  const { isLoading, error, data } = useUsers({
-    page: pageNumber,
-    count: countUsers,
-  });
-  // console.log(data);
-
-  if (isLoading) return "Loading...";
+  if (isLoading) return <Preloader />;
 
   if (error) return "An error has occurred: " + error.message;
 
@@ -27,7 +21,6 @@ export default function UserCards() {
     <>
       <h2 className={cn(styles.title, styles.qwe)}>Working with GET request</h2>
       <ul className={styles.menu}>
-        {/* {isLoading && <div>...loading</div>} */}
         {data?.users.map((user) => (
           <li className={styles.item} key={user.id}>
             <Avatar avatarImg={user.photo} />
@@ -42,13 +35,12 @@ export default function UserCards() {
             </Tooltip>
 
             <p className={styles.tel}>{user.phone}</p>
-            {/* <a href="email:qwe@gmail.com">qwe@gmail.com</a> */}
-            {/* <a href="tel:+380955859439">+380955859439</a> */}
           </li>
         ))}
       </ul>
+      {isFetching && <Preloader />}
       {data.total_pages > data.page && (
-        <Button type="submit" onClick={() => setPageNumber(pageNumber + 1)}>
+        <Button type="submit" disabled={isFetching} onClick={nextPage}>
           Show more
         </Button>
       )}

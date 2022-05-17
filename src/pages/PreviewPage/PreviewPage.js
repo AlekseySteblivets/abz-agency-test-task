@@ -5,7 +5,20 @@ import Hero from "../../components/Hero";
 import UserCards from "../../components/UserCards";
 import RegisterUserForm from "../../forms/RegisterUserForm";
 
-const pageViews = [Hero, UserCards, RegisterUserForm];
+const pageViews = [
+  {
+    component: Hero,
+    idSection: "hero",
+  },
+  {
+    component: UserCards,
+    idSection: "userCards",
+  },
+  {
+    component: RegisterUserForm,
+    idSection: "registerUserForm",
+  },
+];
 
 export default function PreviewPage() {
   return (
@@ -16,10 +29,10 @@ export default function PreviewPage() {
         </Container>
       </LayoutSection>
       <main>
-        {pageViews.map((View) => (
-          <LayoutSection key={View}>
+        {pageViews.map((view) => (
+          <LayoutSection key={view.idSection} id={view.idSection}>
             <Container>
-              <View />
+              <view.component />
             </Container>
           </LayoutSection>
         ))}

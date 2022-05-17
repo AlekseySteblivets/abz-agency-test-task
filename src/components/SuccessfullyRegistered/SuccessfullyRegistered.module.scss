@@ -1,0 +1,13 @@
+@import "../../assets/styles/fonts";
+
+.successfullyRegistered {
+  margin: 0 auto;
+  text-align: center;
+  outline: 1px solid tomato;
+}
+
+.title {
+  margin: 0;
+  @include font-heading;
+  padding-bottom: 50px;
+}

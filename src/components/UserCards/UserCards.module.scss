@@ -20,6 +20,7 @@
   padding: $size5;
   margin: 0px;
   list-style: none;
+  overflow: hidden;
 
   &:not(:last-child) {
     margin-bottom: $size5;
@@ -51,6 +52,7 @@
   padding: 0px;
   margin-top: 0px;
   margin-bottom: 50px;
+
   @include media-s {
     display: flex;
     flex-wrap: wrap;
