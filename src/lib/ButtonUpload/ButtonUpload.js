@@ -1,5 +1,4 @@
-import React, { forwardRef } from "react";
-import { useState } from "react";
+import React, { forwardRef, useState } from "react";
 
 import styles from "./ButtonUpload.module.scss";
 
@@ -8,6 +7,7 @@ export default forwardRef(function ButtonUpload(
   ref
 ) {
   const [fileName, setFileName] = useState(null);
+
   const fileInputChange = (e) => {
     onChange(e);
     let nameImg = e.target.files[0].name;
@@ -30,10 +30,7 @@ export default forwardRef(function ButtonUpload(
         <label htmlFor="uploadInput" className={styles.buttonUpload}>
           Upload
         </label>
-        <span className={styles.text}>
-          {fileName ?? "Upload your photo"}
-          {/* {fileName ? fileName : "Upload your photo"} */}
-        </span>
+        <span className={styles.text}>{fileName ?? "Upload your photo"}</span>
       </div>
       {error && <span className={styles.errorUploadInput}>{error}</span>}
     </>

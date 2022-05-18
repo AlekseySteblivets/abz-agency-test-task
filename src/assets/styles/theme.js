@@ -33,8 +33,5 @@ export const theme = createTheme({
         },
       },
     },
-    // Tooltip: {
-    //   backgroundColor: colors.Primary,
-    // },
   },
 });

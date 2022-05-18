@@ -1,6 +1,8 @@
 import React from "react";
-import styles from "./LayoutSection.module.scss";
+
 import cn from "classnames";
+
+import styles from "./LayoutSection.module.scss";
 
 export default function LayoutSection({ children, element = "section", id }) {
   const className = cn(styles.section);

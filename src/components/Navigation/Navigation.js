@@ -1,13 +1,14 @@
-import styles from "./Navigation.module.scss";
 import Button from "../../lib/Button/Button";
 import logo from "../../assets/img/logo-png.png";
+
+import styles from "./Navigation.module.scss";
 
 export default function Navigation() {
   return (
     <>
       <div className={styles.bgColor} />
       <nav className={styles.navigation}>
-        <a href="/" className={styles.link}>
+        <a href="/" className={styles.logoLink}>
           <img
             alt="logo"
             src={logo}
@@ -16,15 +17,10 @@ export default function Navigation() {
             className={styles.headerlogo}
           />
         </a>
-        <Button href="#userCards" className={styles.butNav}>
-          User
-        </Button>
-        <Button
-          href="#registerUserForm" // написать якорь
-          className={styles.butNav}
-        >
-          Sing up
-        </Button>
+        <div className={styles.butNavigation}>
+          <Button href="#userCards">User</Button>
+          <Button href="#registerUserForm">Sing up</Button>
+        </div>
       </nav>
     </>
   );

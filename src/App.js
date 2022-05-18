@@ -1,8 +1,9 @@
 import { QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 
-import PreviewPage from "./pages/PreviewPage";
 import { ThemeProvider } from "@mui/material/styles";
+
+import PreviewPage from "./pages/PreviewPage";
 import { theme } from "./assets/styles/theme";
 import { queryClient } from "./api/queryClient";
 

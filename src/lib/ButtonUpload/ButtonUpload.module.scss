@@ -1,14 +1,14 @@
 @import "../../assets/styles/colors";
+@import "../../assets/styles/sizes";
 
 .uploadBlock {
   position: relative;
   display: flex;
   align-items: center;
-  margin-top: 47px;
+  margin-top: $size9;
   margin-bottom: 50px;
-  // border: 1px solid $color-light-grey;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: $size1;
+  border-bottom-left-radius: $size1;
   outline: 1px solid $color-light-grey;
 }
 
@@ -17,25 +17,25 @@
   opacity: 0;
   z-index: -1;
 }
+
 .buttonUpload {
   outline: 2px solid $color-black;
   text-align: center;
-  // border: 1px solid $color-black;
   width: 83px;
   height: 54px;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  padding-top: 16px;
+  border-top-left-radius: $size1;
+  border-bottom-left-radius: $size1;
+  padding-top: $size4;
 }
+
 .text {
   color: $color-grey-plaseholder;
-  padding-left: 16px;
+  padding-left: $size4;
 }
 
 .errorUploadInput {
   position: absolute;
   color: $color-error;
-
-  bottom: 547px;
-  left: 76px;
+  bottom: 163px;
+  left: 26px;
 }

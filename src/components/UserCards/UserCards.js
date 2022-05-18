@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import cn from "classnames";
+
 import Tooltip from "@mui/material/Tooltip";
 import Fade from "@mui/material/Fade";
-import { useUsers } from "../../api/queries/useUsers";
 
+import { useUsers } from "../../api/queries/useUsers";
 import Avatar from "../../lib/Avatar/Avatar";
 import Button from "../../lib/Button";
 import Preloader from "../../lib/Preloader";
@@ -47,31 +48,3 @@ export default function UserCards() {
     </>
   );
 }
-
-// <li className={styles.item}>
-//   <Avatar avatarImg={avatarImg} />
-//   <p className={styles.name}>Simon</p>
-//   <p className={styles.position}>President of Commerce</p>
-//   <Tooltip
-//     TransitionComponent={Fade}
-//     TransitionProps={{ timeout: 1000 }}
-//     title="Simon@gmail.com"
-//   >
-//     <p className={styles.mail}>Simon@gmail.com</p>
-//   </Tooltip>
-
-//   <p className={styles.tel}>+38 (098) 278 44 00</p>
-// </li>
-// <li className={styles.item}>
-//   <Avatar avatarImg={avatarImg} />
-//   <p className={styles.name}>Simon</p>
-//   <p className={styles.position}>President of Commerce</p>
-//   <Tooltip
-//     TransitionComponent={Fade}
-//     TransitionProps={{ timeout: 1000 }}
-//     title="Simon@gmail.com"
-//   >
-//     <p className={styles.mail}>Simon@gmail.com</p>
-//   </Tooltip>
-//   <p className={styles.tel}>+38 (098) 278 44 00</p>
-// </li>

@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
-import { positionService } from "../services/positionService";
 
+import { positionService } from "../services/positionService";
 import { POSITION_CACHE_KEY } from "../cache/positionsCache";
 
 export const usePosition = () => {

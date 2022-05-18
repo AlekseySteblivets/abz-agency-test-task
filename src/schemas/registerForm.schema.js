@@ -9,16 +9,9 @@ export const schema = yup
     email: yup.string().email().required(),
     phone: yup
       .string()
-      .matches(
-        // /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
-        // ^[\+]{0,1}380([0-9]{9})$),
-        /^[\+]{0,1}380([0-9]{9})$/,
-        // ((\+38)?\(?\d{3}\)?[\s\.-]?(\d{7}|\d{3}[\s\.-]\d{2}[\s\.-]\d{2}|\d{3}-\d{4})),
-        "Invalid phone number"
-      )
+      .matches(/^[\+]{0,1}380([0-9]{9})$/, "Invalid phone number")
       .required(),
     position_id: yup.number().required(),
-    // photo: yup.string().required(),
     photo: yup
       .mixed()
       .test("fileSize", "The file is too large", (value) => {

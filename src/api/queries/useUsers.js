@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { useQuery } from "react-query";
-import { userService } from "../services/userService";
 
+import { userService } from "../services/userService";
 import { USER_CACHE_KEY } from "../cache/usersCache";
 
 const countUsers = 6;

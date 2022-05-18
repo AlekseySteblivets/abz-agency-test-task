@@ -9,7 +9,6 @@
   padding-right: $size4;
   width: 100%;
   width: 360px;
-  outline: 1px solid tomato;
   background-color: $color-bg;
   @include media-s {
     width: 768px;
@@ -27,7 +26,3 @@
     padding-right: 695px;
   }
 }
-
-// #registerUserForm {
-//   scroll-behavior: smooth;
-// }

@@ -37,10 +37,9 @@ export default function Form() {
       }
       formData.append(key, data[key]);
     }
+
     registerUser(formData, { onSuccess: () => reset() });
   };
-
-  // if (isSuccess) return
 
   return (
     <>
@@ -87,7 +86,7 @@ export default function Form() {
           </Button>
         )}
       </form>
-      {!isSuccess && <SuccessfullyRegistered />}
+      {isSuccess && <SuccessfullyRegistered />}
     </>
   );
 }

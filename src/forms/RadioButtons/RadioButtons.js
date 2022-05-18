@@ -1,8 +1,10 @@
 import React, { forwardRef } from "react";
+
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
+
 import { usePosition } from "../../api/queries/usePositions";
 
 export default forwardRef(function RadioButton(
@@ -10,7 +12,6 @@ export default forwardRef(function RadioButton(
   ref
 ) {
   const { isLoading, error, data } = usePosition();
-  // console.log(data);
 
   return (
     <FormControl>
