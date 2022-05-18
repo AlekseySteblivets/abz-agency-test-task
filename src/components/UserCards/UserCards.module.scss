@@ -1,6 +1,7 @@
 @import "../../assets/styles/colors";
 @import "../../assets/styles/sizes";
 @import "../../assets/styles/media";
+@import "../../assets/styles/fonts";
 
 .title {
   margin: 0;
@@ -8,7 +9,7 @@
   font-size: $size8;
   line-height: 1;
   text-align: center;
-  color: rgba(0, 0, 0, 0.87);
+  color: $color-black;
   padding-bottom: 50px;
 }
 
@@ -62,4 +63,13 @@
 .position {
   margin-top: $size5;
   margin-bottom: 0px;
+}
+
+.tooltip {
+  background-color: $color-black;
+  @include font-bodying;
+}
+
+.mail {
+  cursor: pointer;
 }

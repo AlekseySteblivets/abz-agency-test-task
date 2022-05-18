@@ -44,6 +44,7 @@ export default function Form() {
       <h2 className={styles.title}>Working with POST request</h2>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.formUserForm}>
         <TextField
+          classes={{ root: styles.formItem }}
           error={!!errors.name}
           inputProps={{ ...register("name") }}
           className={styles.inputForm}
@@ -53,6 +54,7 @@ export default function Form() {
           helperText={errors.name?.message}
         />
         <TextField
+          classes={{ root: styles.formItem }}
           error={!!errors.email}
           inputProps={{ ...register("email") }}
           className={styles.inputForm}
@@ -62,6 +64,7 @@ export default function Form() {
           helperText={errors.email?.message}
         />
         <TextField
+          classes={{ root: styles.formItem }}
           error={!!errors.phone}
           inputProps={{ ...register("phone") }}
           className={styles.inputForm}

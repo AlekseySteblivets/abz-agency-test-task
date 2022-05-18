@@ -14,6 +14,8 @@ import styles from "./UserCards.module.scss";
 export default function UserCards() {
   const { isLoading, error, data, isFetching, nextPage } = useUsers();
 
+  console.log("isLoading", isLoading);
+  console.log("isFetching", isFetching);
   if (isLoading) return <Preloader />;
 
   if (error) return "An error has occurred: " + error.message;
@@ -28,6 +30,11 @@ export default function UserCards() {
             <p className={styles.name}>{user.name}</p>
             <p className={styles.position}>{user.position}</p>
             <Tooltip
+              classes={{
+                tooltip: styles.tooltip,
+                arrow: styles.arrow,
+              }}
+              // leaveDelay={200000}
               TransitionComponent={Fade}
               TransitionProps={{ timeout: 1000 }}
               title={user.email}

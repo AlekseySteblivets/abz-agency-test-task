@@ -20,7 +20,7 @@ export const useUsers = () => {
     queryKey,
     () => getUsers({ page: pageNumber, count: countUsers }),
     {
-      keepPreviousData: false,
+      keepPreviousData: true,
     }
   );
 
