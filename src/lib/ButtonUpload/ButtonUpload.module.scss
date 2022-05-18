@@ -1,5 +1,6 @@
 @import "../../assets/styles/colors";
 @import "../../assets/styles/sizes";
+@import "../../assets/styles/media";
 
 .uploadBlock {
   position: relative;
@@ -12,6 +13,9 @@
   outline: 1px solid $color-light-grey;
 }
 
+.uploadBlockActive {
+  outline: 2px solid $color-error;
+}
 .inputUpload {
   position: absolute;
   opacity: 0;
@@ -28,6 +32,10 @@
   padding-top: $size4;
 }
 
+.buttonUploadActive {
+  outline: 2px solid $color-error;
+}
+
 .text {
   color: $color-grey-plaseholder;
   padding-left: $size4;
@@ -38,4 +46,13 @@
   color: $color-error;
   bottom: 163px;
   left: 26px;
+  @include media-s {
+    left: 205px;
+  }
+  @include media-m {
+    left: 333px;
+  }
+  @include media-l {
+    left: 1100px;
+  }
 }

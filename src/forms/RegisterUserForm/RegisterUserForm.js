@@ -1,4 +1,3 @@
-// import React, { Component } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import TextField from "@mui/material/TextField";
@@ -28,10 +27,9 @@ export default function Form() {
   const { isLoading, isSuccess, registerUser } = usePostUser();
 
   const onSubmit = (data) => {
-    console.log("usePostUser", isLoading);
     const formData = new FormData();
 
-    for (var key in data) {
+    for (let key in data) {
       if (key === "photo") {
         formData.append(key, data[key][0]);
       }

@@ -21,9 +21,6 @@ export const useUsers = () => {
     () => getUsers({ page: pageNumber, count: countUsers }),
     {
       keepPreviousData: false,
-      // onSuccess: (data) => {
-      //   console.log(data);
-      // },
     }
   );
 

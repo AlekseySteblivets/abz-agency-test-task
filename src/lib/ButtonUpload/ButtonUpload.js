@@ -1,4 +1,5 @@
 import React, { forwardRef, useState } from "react";
+import cn from "classnames";
 
 import styles from "./ButtonUpload.module.scss";
 
@@ -10,14 +11,20 @@ export default forwardRef(function ButtonUpload(
 
   const fileInputChange = (e) => {
     onChange(e);
+
     let nameImg = e.target.files[0].name;
     setFileName(nameImg);
   };
 
-  console.log(error);
   return (
     <>
-      <div className={styles.uploadBlock}>
+      <div
+        className={
+          !error
+            ? styles.uploadBlock
+            : cn(styles.uploadBlock, styles.uploadBlockActive)
+        }
+      >
         <input
           ref={ref}
           className={styles.inputUpload}
@@ -27,7 +34,14 @@ export default forwardRef(function ButtonUpload(
           id="uploadInput"
           type="file"
         />
-        <label htmlFor="uploadInput" className={styles.buttonUpload}>
+        <label
+          htmlFor="uploadInput"
+          className={
+            !error
+              ? styles.buttonUpload
+              : cn(styles.buttonUpload, styles.buttonUploadActive)
+          }
+        >
           Upload
         </label>
         <span className={styles.text}>{fileName ?? "Upload your photo"}</span>
