@@ -65,11 +65,15 @@
   margin-bottom: 0px;
 }
 
-.tooltip {
+div .tooltip {
   background-color: $color-black;
   @include font-bodying;
 }
 
 .mail {
   cursor: pointer;
+}
+
+.btn {
+  width: 120px;
 }

@@ -8,6 +8,7 @@ $color-light-grey: #d0cfcf;
 $color-error: #cb3d40;
 $color-grey-plaseholder: #7e7e7e;
 $color-white: #ffffff;
+$color-dark-white: rgba(255, 255, 255, 0.87);
 
 :export {
   colorPrimary: $color-primary;
@@ -20,4 +21,5 @@ $color-white: #ffffff;
   colorError: $color-error;
   colorGreyPlaseholder: $color-grey-plaseholder;
   colorWhite: $color-white;
+  colorDarkWhite: $color-dark-white;
 }

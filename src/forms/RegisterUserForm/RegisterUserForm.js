@@ -78,11 +78,7 @@ export default function Form() {
         {isLoading ? (
           <Preloader />
         ) : (
-          <Button
-            type="submit"
-            disabled={!isValid}
-            className={styles.btnUserForm}
-          >
+          <Button type="submit" disabled={!isValid}>
             Sing up
           </Button>
         )}

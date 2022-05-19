@@ -3,7 +3,7 @@
 @mixin font-heading {
   font-size: $size8;
   font-weight: 400;
-  line-height: $size8;
+  line-height: 1;
 }
 
 @mixin font-bodying {

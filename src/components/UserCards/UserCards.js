@@ -1,5 +1,4 @@
 import React from "react";
-import cn from "classnames";
 
 import Tooltip from "@mui/material/Tooltip";
 import Fade from "@mui/material/Fade";
@@ -14,15 +13,13 @@ import styles from "./UserCards.module.scss";
 export default function UserCards() {
   const { isLoading, error, data, isFetching, nextPage } = useUsers();
 
-  console.log("isLoading", isLoading);
-  console.log("isFetching", isFetching);
   if (isLoading) return <Preloader />;
 
   if (error) return "An error has occurred: " + error.message;
 
   return (
     <>
-      <h2 className={cn(styles.title, styles.qwe)}>Working with GET request</h2>
+      <h2 className={styles.title}>Working with GET request</h2>
       <ul className={styles.menu}>
         {data?.users.map((user) => (
           <li className={styles.item} key={user.id}>
@@ -34,7 +31,6 @@ export default function UserCards() {
                 tooltip: styles.tooltip,
                 arrow: styles.arrow,
               }}
-              // leaveDelay={200000}
               TransitionComponent={Fade}
               TransitionProps={{ timeout: 1000 }}
               title={user.email}
